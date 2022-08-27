@@ -3,14 +3,27 @@ const config = require('../config/config.json');
 
 //mysql://b2206e74a45685:e3e2793d@us-cdbr-east-06.cleardb.net/heroku_e75b8d5ea99bdab?reconnect=true
 
+//BASE DE DATOS EN HEROKU
+// const dbConexion = mysql.createPool ({
+//     host: 'us-cdbr-east-06.cleardb.net',
+//     user: 'b2206e74a45685',
+//     password: 'e3e2793d',
+//     database: 'heroku_e75b8d5ea99bdab',
+// });
+
+// module.exports = dbConexion.promise();
+
+//BASE DE DATOS EN CLEVER CLOUD
 const dbConexion = mysql.createPool ({
-    host: 'us-cdbr-east-06.cleardb.net',
-    user: 'b2206e74a45685',
-    password: 'e3e2793d',
-    database: 'heroku_e75b8d5ea99bdab',
+    host: 'bbpf2pjrdlhltuznbylx-mysql.services.clever-cloud.com',
+    user: 'ut39l7ebph2yz1mv',
+    password: 'neT23pQfSj3Mcqv6XHqk',
+    database: 'bbpf2pjrdlhltuznbylx',
+    port: '3306'
 });
 
 module.exports = dbConexion.promise();
+
 
 // FUNCIONA SOLO EN EL SERVIDOR LOCAL
 // const dbConexion = mysql.createPool ({
