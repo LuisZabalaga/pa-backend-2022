@@ -13,12 +13,12 @@ const config = require('../config/config.json');
 
 // module.exports = dbConexion.promise();
 
-//BASE DE DATOS EN CLEVER CLOUD
+//BASE DE DATOS EN HOSTINGER
 const dbConexion = mysql.createPool ({
-    host: 'bbpf2pjrdlhltuznbylx-mysql.services.clever-cloud.com',
-    user: 'ut39l7ebph2yz1mv',
-    password: 'neT23pQfSj3Mcqv6XHqk',
-    database: 'bbpf2pjrdlhltuznbylx',
+    host: 'sql858.main-hosting.eu',
+    user: 'u286156374_luiszabalaga',
+    password: 'Lmq^~Ax?3',
+    database: 'u286156374_pa_datadase',
     port: '3306'
 });
 
