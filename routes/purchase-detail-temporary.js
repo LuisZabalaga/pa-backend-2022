@@ -1,5 +1,5 @@
 const express = require('express');
-const temporaryPurchaseDetailController = require('../controllers/temporary-purchase-detail');
+const temporaryPurchaseDetailController = require('../controllers/purchase-detail-temporary');
 const temporaryPurchaseDetailRoutes = express.Router();
 
 temporaryPurchaseDetailRoutes.get('/', temporaryPurchaseDetailController.getAllTemporaryPurchaseDetail);

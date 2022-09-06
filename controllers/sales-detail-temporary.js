@@ -1,4 +1,4 @@
-const TemporarySalesDetail = require('../models/temporary-sales-detail');
+const TemporarySalesDetail = require('../models/sales-detail-temporary');
 
 const getAllTemporarySalesDetail = async (req, res, next) => {
   try {

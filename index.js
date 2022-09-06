@@ -14,10 +14,10 @@ const employeeRoutes = require('./routes/employees');
 const typeExpenseRoutes = require('./routes/type-expense');
 const rolesRoutes = require('./routes/roles');
 const cashRegisterRoutes = require('./routes/cash-register');
-const temporaryPurchaseDetailRoutes = require('./routes/temporary-purchase-detail');
+const temporaryPurchaseDetailRoutes = require('./routes/purchase-detail-temporary');
 const purchasesDetailRoutes = require('./routes/purchase-detail');
 const purchasesRoutes = require('./routes/purchases');
-const temporarySalesDetailRoutes = require('./routes/temporary-sales-detail');
+const temporarySalesDetailRoutes = require('./routes/sales-detail-temporary');
 const salesDetailRoutes = require('./routes/sales-detail');
 const salesRoutes = require('./routes/sales');
 const advancesRoutes = require('./routes/advances');
@@ -25,6 +25,7 @@ const advancesCustomerRoutes = require('./routes/advances-customer');
 const advancesStateRoutes = require('./routes/advances-state');
 const ticketRoutes = require('./routes/ticket');
 const ticketSaleRoutes = require('./routes/ticket-sale');
+const LastPurchasesIdRoutes = require('./routes/purchase-id');
 
 const app = express();
 
@@ -65,6 +66,7 @@ app.use('/advances-customer', advancesCustomerRoutes);
 app.use('/advances-state', advancesStateRoutes);
 app.use('/ticket', ticketRoutes);
 app.use('/ticket-sale', ticketSaleRoutes);
+app.use('/purchase-id', LastPurchasesIdRoutes);
 app.use(errorController.get404);
 app.use(errorController.get500);
 
