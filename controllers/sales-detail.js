@@ -18,7 +18,7 @@ const addAllSalesDetail = async (req, res, next) => {
     res.status(201).json(addSale);
   } catch (err) {
     if (!err.statusCode) {
-      err.statusCode = 500;
+      err.statusCode = 500; 
     }
     next(err);
   }

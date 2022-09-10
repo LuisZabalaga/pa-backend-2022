@@ -26,6 +26,7 @@ const advancesStateRoutes = require('./routes/advances-state');
 const ticketRoutes = require('./routes/ticket');
 const ticketSaleRoutes = require('./routes/ticket-sale');
 const LastPurchasesIdRoutes = require('./routes/purchase-id');
+const LastSaleIdRoutes = require('./routes/sale-id');
 
 const app = express();
 
@@ -67,6 +68,7 @@ app.use('/advances-state', advancesStateRoutes);
 app.use('/ticket', ticketRoutes);
 app.use('/ticket-sale', ticketSaleRoutes);
 app.use('/purchase-id', LastPurchasesIdRoutes);
+app.use('/sale-id', LastSaleIdRoutes);
 app.use(errorController.get404);
 app.use(errorController.get500);
 

@@ -3,7 +3,7 @@ const purchasesDetailController = require('../controllers/purchase-detail');
 const purchasesDetailRoutes = express.Router();
 
 purchasesDetailRoutes.get('/:id', purchasesDetailController.getPurchaseDetailForId);
-purchasesDetailRoutes.put('/', purchasesDetailController.addAllPurchasesDetail);
+purchasesDetailRoutes.post('/', purchasesDetailController.addAllPurchasesDetail);
 purchasesDetailRoutes.delete('/', purchasesDetailController.deleteAllTemporaryPurchaseDetail);
 
 module.exports = purchasesDetailRoutes;

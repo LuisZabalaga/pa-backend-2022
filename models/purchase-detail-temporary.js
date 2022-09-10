@@ -38,11 +38,6 @@ module.exports = class TemporaryPurchaseDetail {
         return db.execute(`CALL diminishWeightProductForPurchase (?, ?)`, [peso_compra, producto]);
     }
 
-    // static editOneTemporaryPurchaseDetail(id, cantidad, tipo, descripcion, beneficiado, empleado_id, fecha, updated_at) {
-    //     return db.execute(`UPDATE expenses SET exp_cantidad=?, exp_typ_ID=?, exp_descripcion=?, exp_beneficiado=?, exp_emp_ID=?, exp_fecha=?, exp_updated_at=? WHERE exp_ID=?`,
-    //         [cantidad, tipo, descripcion, beneficiado, empleado_id, fecha, updated_at, id]);
-    // }
-
     static deleteOneTemporaryPurchaseDetail(id) {
         return db.execute(`DELETE FROM purchase_detail_temporary WHERE pur_ID = ?`, [id]);
     }

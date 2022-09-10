@@ -20,13 +20,4 @@ module.exports = class Ticket {
             [ruc, serie, serie_numero, numero, boleta, boleta_final]);
     }
 
-    // static editOneRole(id, perfil, descripcion, updated_at) {
-    //     return db.execute(`UPDATE roles SET rol_perfil=?, rol_descripcion=?, rol_updated_at=? WHERE typ_ID=?`,
-    //         [perfil, descripcion, updated_at, id]);
-    // }
-
-    // static deleteOneRole(id) {
-    //     return db.execute(`DELETE FROM roles WHERE rol_ID = ?`, [id]);
-    // }
-
 }

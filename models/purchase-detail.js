@@ -2,17 +2,8 @@ const db = require('../util/database');
 
 module.exports = class PurchaseDetail {
 
-    constructor(id, boleta, fecha, producto, proveedor, peso, precio, subtotal, created_at, updated_at) {
+    constructor(id) {
         this.id = id;
-        this.boleta = boleta;
-        this.fecha = fecha;
-        this.producto = producto;
-        this.proveedor = proveedor;
-        this.peso = peso;
-        this.precio = precio;
-        this.subtotal = subtotal;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
     }
 
     static getPurchaseDetailForId(id) {
