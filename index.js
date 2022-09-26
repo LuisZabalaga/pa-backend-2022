@@ -27,6 +27,8 @@ const ticketRoutes = require('./routes/ticket');
 const ticketSaleRoutes = require('./routes/ticket-sale');
 const LastPurchasesIdRoutes = require('./routes/purchase-id');
 const LastSaleIdRoutes = require('./routes/sale-id');
+const usersRoutes = require('./routes/users');
+const reportsRoutes = require('./routes/reports');
 
 const app = express();
 
@@ -69,6 +71,8 @@ app.use('/ticket', ticketRoutes);
 app.use('/ticket-sale', ticketSaleRoutes);
 app.use('/purchase-id', LastPurchasesIdRoutes);
 app.use('/sale-id', LastSaleIdRoutes);
+app.use('/users', usersRoutes);
+app.use('/reports', reportsRoutes);
 app.use(errorController.get404);
 app.use(errorController.get500);
 
