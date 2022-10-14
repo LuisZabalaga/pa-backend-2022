@@ -10,4 +10,8 @@ module.exports = class Reports {
         return db.execute(`CALL getAllProductsForCategory (?);`, [categoria]);
     }
 
+    static getTotalPurchaseForCategorieAndDate(categoria, inicial, final) { 
+        return db.execute(`CALL getTotalPurchaseForCategorieAndDate (?, ?, ?);`, [categoria, inicial, final]);
+    }
+
 }
