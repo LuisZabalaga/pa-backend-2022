@@ -15,29 +15,29 @@ const getAllCashRegisterForDate = async (req, res, next) => {
     }
   };
 
-const getAllCashRegisterIncomes = async (req, res, next) => {
-    try {
-        const [incomes] = await CashRegister.getAllCashRegisterIncomes();
-        res.status(200).json(incomes);
-    } catch (err) {
-        if (!err.statusCode) {
-            err.statusCode = 500;
-        }
-        next(err);
-    }
-};
+// const getAllCashRegisterIncomes = async (req, res, next) => {
+//     try {
+//         const [incomes] = await CashRegister.getAllCashRegisterIncomes();
+//         res.status(200).json(incomes);
+//     } catch (err) {
+//         if (!err.statusCode) {
+//             err.statusCode = 500;
+//         }
+//         next(err);
+//     }
+// };
 
-const getAllCashRegisterExpenses = async (req, res, next) => {
-    try {
-        const [expenses] = await CashRegister.getAllCashRegisterExpenses();
-        res.status(200).json(expenses);
-    } catch (err) {
-        if (!err.statusCode) {
-            err.statusCode = 500;
-        }
-        next(err);
-    }
-};
+// const getAllCashRegisterExpenses = async (req, res, next) => {
+//     try {
+//         const [expenses] = await CashRegister.getAllCashRegisterExpenses();
+//         res.status(200).json(expenses);
+//     } catch (err) {
+//         if (!err.statusCode) {
+//             err.statusCode = 500;
+//         }
+//         next(err);
+//     }
+// };
 
 // const getAllCashRegister = async (req, res, next) => {
 //     try {
@@ -51,11 +51,29 @@ const getAllCashRegisterExpenses = async (req, res, next) => {
 //     }
 // };
 
+const getTotalCashRegisterForState = async (req, res, next) => {
+    try {
+        const [CashRegisterState] = await CashRegister.getTotalCashRegisterForState(
+            req.params.estado,
+            req.params.fecha,
+            req.params.tipo
+        );
+        res.status(200).json(CashRegisterState);
+    } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        next(err);
+    }
+};
+
 const addNewCashRegister = async (req, res, next) => {
     try {
         const addCashRegister = await CashRegister.addNewCashRegister(
             req.body.cas_monto,
             req.body.cas_fecha,
+            req.body.cas_pur_sal_ID,
+            req.body.cas_des,
             req.body.cas_estado,
             req.body.cas_concepto,
             req.body.cas_emp_ID,
@@ -112,6 +130,5 @@ module.exports = {
     addNewCashRegister,
     editOneCashRegister,
     deleteOneCashRegister,
-    getAllCashRegisterIncomes,
-    getAllCashRegisterExpenses
+    getTotalCashRegisterForState
 }

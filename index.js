@@ -29,6 +29,7 @@ const LastPurchasesIdRoutes = require('./routes/purchase-id');
 const LastSaleIdRoutes = require('./routes/sale-id');
 const usersRoutes = require('./routes/users');
 const reportsRoutes = require('./routes/reports');
+const cashRegisterBalanceRoutes = require('./routes/cash-register-balance');
 
 const app = express();
 
@@ -73,6 +74,7 @@ app.use('/purchase-id', LastPurchasesIdRoutes);
 app.use('/sale-id', LastSaleIdRoutes);
 app.use('/users', usersRoutes);
 app.use('/reports', reportsRoutes);
+app.use('/cash-register-balance', cashRegisterBalanceRoutes),
 app.use(errorController.get404);
 app.use(errorController.get500);
 

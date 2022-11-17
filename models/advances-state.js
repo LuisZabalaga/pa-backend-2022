@@ -16,4 +16,8 @@ module.exports = class AdvancesState {
         return db.execute(`CALL changeStateForAdvanceToCustomer (?, ?);`, [estado, cliente])
     }
 
+    static getLastAdvanceId () {
+        return db.execute(`SELECT ad_ID FROM advances WHERE ad_ID = (SELECT MAX(ad_ID) FROM advances);`)
+    }
+
 }
