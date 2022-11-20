@@ -2,12 +2,13 @@ const db = require('../util/database');
 
 module.exports = class CashRegisterBalance {
 
-    constructor(id, fecha, ingresos, gastos, balance, ecargado) {
+    constructor(id, fecha, ingresos, gastos, balance, balance_final, ecargado) {
         this.id = id;
         this.fecha = fecha;
         this.ingresos = ingresos;
         this.gastos = gastos;
         this.balance = balance;
+        this.balance_final = balance_final;
         this.ecargado = ecargado;
     }
 
@@ -19,10 +20,11 @@ module.exports = class CashRegisterBalance {
         return db.execute(`SELECT * FROM cash_register_balance WHERE bal_ID=(SELECT max(bal_ID) FROM cash_register_balance);`);
     }
 
-    static addNewCashRegisterBalance(fecha, ingresos, gastos, balance, ecargado) {
-        console.log(fecha, ingresos, gastos, balance, ecargado);
-        return db.execute(`INSERT INTO cash_register_balance (bal_fecha, bal_incomes, bal_expenses, bal_balance, bal_emp_ID) VALUES (?, ?, ?, ?, ?)`,
-            [fecha, ingresos, gastos, ingresos-gastos, ecargado]);
+    static addNewCashRegisterBalance(fecha, ingresos, gastos, balance, balance_final, ecargado) {
+        let balances = ingresos-gastos;
+        console.log(fecha, ingresos, gastos, balances, balance_final+balances, ecargado);
+        return db.execute(`INSERT INTO cash_register_balance (bal_fecha, bal_incomes, bal_expenses, bal_balance, bal_previous_balance, bal_emp_ID) VALUES (?, ?, ?, ?, ?, ?)`,
+            [fecha, ingresos, gastos, balances, balance_final+balances, ecargado]);
     }
 
     static editOneCashRegisterBalance(id, fecha, ingresos, gastos, balance, ecargado) {

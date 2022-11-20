@@ -34,6 +34,7 @@ const addNewCashRegisterBalance = async (req, res, next) => {
             req.body.bal_incomes,
             req.body.bal_expenses,
             req.body.bal_balance,
+            req.body.bal_previous_balance,
             req.body.bal_emp_ID,
         );
         res.status(201).json(addCashRegisterBalance)
