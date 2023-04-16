@@ -1,7 +1,7 @@
 {
     "host": "localhost",
     "user": "root",
-    "password": "123456",
-    "database": "padb",
+    "password": "",
+    "database": "u286156374_pa_database_test",
     "port": "3306"
 }

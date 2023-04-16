@@ -5,6 +5,7 @@ const cashRegisterBalanceRoutes = express.Router();
 cashRegisterBalanceRoutes.get('/:inicial/:final', cashRegisterBalanceController.getAllCashRegisterBalanceByDate);
 cashRegisterBalanceRoutes.get('/', cashRegisterBalanceController.getLastCashRegisterBalance);
 cashRegisterBalanceRoutes.post('/', cashRegisterBalanceController.addNewCashRegisterBalance);
+cashRegisterBalanceRoutes.put('/:id/:state', cashRegisterBalanceController.changeStateCashRegisterBalance);
 cashRegisterBalanceRoutes.put('/:id', cashRegisterBalanceController.editOneCashRegisterBalance);
 cashRegisterBalanceRoutes.delete('/:id', cashRegisterBalanceController.deleteOneCashRegisterBalance);
 

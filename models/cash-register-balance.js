@@ -22,9 +22,13 @@ module.exports = class CashRegisterBalance {
 
     static addNewCashRegisterBalance(fecha, ingresos, gastos, balance, balance_final, ecargado) {
         let balances = balance_final - gastos + ingresos;
-        console.log(fecha, ingresos, gastos, balances, balance_final+balances, ecargado);
+        // console.log(fecha, ingresos, gastos, balances, balance_final+balances, ecargado);
         return db.execute(`INSERT INTO cash_register_balance (bal_fecha, bal_incomes, bal_expenses, bal_balance, bal_previous_balance, bal_emp_ID) VALUES (?, ?, ?, ?, ?, ?)`,
             [fecha, ingresos, gastos, ingresos-gastos, balances, ecargado]);
+    }
+
+    static changeStateCashRegisterBalance(id, state) {
+        return db.execute(`CALL change_state_cash_register_balance (?, ?)`, [id, state]);
     }
 
     static editOneCashRegisterBalance(id, fecha, ingresos, gastos, balance, ecargado) {

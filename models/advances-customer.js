@@ -2,7 +2,7 @@ const db = require('../util/database');
 
 module.exports = class AdvancesCustomer {
 
-    constructor(id, fecha, cantidad, estado_adelanto, prov_cus_ID, estado, cliente, prov_cus, proveedor, inicial, final, created_at, updated_at) {
+    constructor(id, fecha, cantidad, estado_adelanto, prov_cus_ID, estado, cliente, prov_cus, proveedor, inicial, final) {
         this.id = id;
         this.fecha = fecha;
         this.cantidad = cantidad;
@@ -14,8 +14,6 @@ module.exports = class AdvancesCustomer {
         this.proveedor = proveedor;
         this.inicial = inicial;
         this.final = final;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
     }
 
     static getAdvanceForCustomerAndState(cliente) {

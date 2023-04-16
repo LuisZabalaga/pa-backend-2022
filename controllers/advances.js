@@ -115,9 +115,7 @@ const addNewAdvance = async (req, res, next) => {
       req.body.ad_cantidad,
       req.body.ad_dest_adv,
       req.body.ad_prov_cus_ID,
-      req.body.ad_estado,
-      req.body.ad_created_at,
-      req.body.ad_updated_at
+      req.body.ad_estado
     );
     res.status(201).json(addAdvance)
   } catch (err) {
@@ -137,9 +135,7 @@ const editOneAdvance = async (req, res, next) => {
       req.body.ad_cantidad,
       req.body.ad_dest_adv,
       req.body.ad_prov_cus_ID,
-      req.body.ad_estado,
-      // req.body.ad_created_at,
-      req.body.ad_updated_at
+      req.body.ad_estado
     );
     res.status(200).json(editAdvance)
   } catch (err) {

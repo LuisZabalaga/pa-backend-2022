@@ -44,16 +44,16 @@ module.exports = class Advances {
         return db.execute(`CALL getAdvanceForCustomerAndState (?, ?);`, [estado, cliente]);
     }
 
-    static addNewAdvance(fecha, cantidad, estado_adelanto, prov_cus_ID, estado, created_at, updated_at) {
-        return db.execute(`INSERT INTO advances (ad_fecha, ad_cantidad, ad_dest_adv, ad_prov_cus_ID, ad_estado, ad_created_at, ad_updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-        [fecha, cantidad, estado_adelanto, prov_cus_ID, estado, created_at, null]);
+    static addNewAdvance(fecha, cantidad, estado_adelanto, prov_cus_ID, estado) {
+        return db.execute(`INSERT INTO advances (ad_fecha, ad_cantidad, ad_dest_adv, ad_prov_cus_ID, ad_estado) VALUES (?, ?, ?, ?, ?)`,
+        [fecha, cantidad, estado_adelanto, prov_cus_ID, estado]);
     }
 
-    static editOneAdvance(id, fecha, cantidad, estado_adelanto, prov_cus_ID, estado, updated_at) {
-        return db.execute(`UPDATE advances SET ad_fecha=?, ad_cantidad=?, ad_dest_adv=?, ad_prov_cus_ID=?, ad_estado=?, ad_updated_at=? WHERE ad_ID=?`,
-            [fecha, cantidad, estado_adelanto, prov_cus_ID, estado, updated_at, id]);
+    static editOneAdvance(id, fecha, cantidad, estado_adelanto, prov_cus_ID, estado) {
+        return db.execute(`UPDATE advances SET ad_fecha=?, ad_cantidad=?, ad_dest_adv=?, ad_prov_cus_ID=?, ad_estado=? WHERE ad_ID=?`,
+            [fecha, cantidad, estado_adelanto, prov_cus_ID, estado, id]);
     }
-
+    
     static deleteOneAdvance(id) {
         return db.execute(`DELETE FROM advances WHERE ad_ID = ?`, [id]);
     }

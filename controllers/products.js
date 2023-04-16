@@ -48,7 +48,7 @@ const addNewProduct = async(req, res, next) => {
             req.body.prod_peso_local,
             req.body.prod_imagen,
             req.body.prod_cat_ID,
-            req.body.prod_created_at, 
+            req.body.prod_created_at,
             req.body.prod_updated_at
         );
         res.status(201).json(addProduct)

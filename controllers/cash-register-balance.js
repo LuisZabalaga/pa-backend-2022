@@ -47,6 +47,21 @@ const addNewCashRegisterBalance = async (req, res, next) => {
 
 }
 
+const changeStateCashRegisterBalance = async (req, res, next) => {
+    try {
+        const stateCashRegisterBalance = await CashRegisterBalance.changeStateCashRegisterBalance(
+            req.params.id,
+            req.params.state,
+        );
+        res.status(200).json(stateCashRegisterBalance)
+    } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        next(err);
+    }
+}
+
 const editOneCashRegisterBalance = async (req, res, next) => {
     try {
         const editCashRegisterBalance = await CashRegisterBalance.editOneCashRegisterBalance(
@@ -64,7 +79,6 @@ const editOneCashRegisterBalance = async (req, res, next) => {
         }
         next(err);
     }
-
 }
 
 const deleteOneCashRegisterBalance = async (req, res, next) => {
@@ -85,6 +99,7 @@ module.exports = {
     getAllCashRegisterBalanceByDate,
     getLastCashRegisterBalance,
     addNewCashRegisterBalance,
+    changeStateCashRegisterBalance,
     editOneCashRegisterBalance,
     deleteOneCashRegisterBalance
 }

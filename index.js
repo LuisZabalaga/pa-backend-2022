@@ -30,6 +30,7 @@ const LastSaleIdRoutes = require('./routes/sale-id');
 const usersRoutes = require('./routes/users');
 const reportsRoutes = require('./routes/reports');
 const cashRegisterBalanceRoutes = require('./routes/cash-register-balance');
+const productWeightRoutes = require('./routes/weight-products');
 
 const app = express();
 
@@ -75,6 +76,7 @@ app.use('/sale-id', LastSaleIdRoutes);
 app.use('/users', usersRoutes);
 app.use('/reports', reportsRoutes);
 app.use('/cash-register-balance', cashRegisterBalanceRoutes),
+app.use('/weight-products', productWeightRoutes);
 app.use(errorController.get404);
 app.use(errorController.get500);
 

@@ -13,6 +13,8 @@ const config = require('../config/config.json');
 
 // module.exports = dbConexion.promise();
 
+
+
 //BASE DE DATOS EN HOSTINGER
 const dbConexion = mysql.createPool ({
     host: 'sql858.main-hosting.eu',

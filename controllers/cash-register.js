@@ -114,7 +114,10 @@ const editOneCashRegister = async (req, res, next) => {
 
 const deleteOneCashRegister = async (req, res, next) => {
     try {
-        const deleteCashRegister = await CashRegister.deleteOneCashRegister(req.params.id);
+        const deleteCashRegister = await CashRegister.deleteOneCashRegister(
+            req.params.id,
+            req.params.desc
+        );
         res.status(200).json(deleteCashRegister);
     } catch (err) {
         if (!err.statusCode) {

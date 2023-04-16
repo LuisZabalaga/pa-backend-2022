@@ -35,7 +35,6 @@ module.exports = class CashRegister {
 
     static getAllCashRegisterForDate (inicial, final) {
         return db.execute(`CALL getAllCashRegisterForDate  (?, ?);`, [inicial, final]);
-
     }
 
     static addNewCashRegister(monto, fecha, id_compra_venta, descripcion, estado, concepto, encargado, created_at, updated_at) {
@@ -48,8 +47,8 @@ module.exports = class CashRegister {
             [monto, fecha, estado, concepto, encargado, updated_at, id]);
     }
 
-    static deleteOneCashRegister(id) {
-        return db.execute(`DELETE FROM cash_register WHERE cas_ID=?`, [id]);
+    static deleteOneCashRegister(id, desc) {
+        return db.execute(`DELETE FROM cash_register WHERE cas_pur_sal_ID=? AND cas_des=?`, [id, desc]);
     }
 
 }
